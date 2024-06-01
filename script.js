@@ -1,11 +1,13 @@
-var brt_fair = prompt("Please Enter your Balance: ")
+                            // TRAFFIC LIGHT SYSTEM
 
-if(brt_fair >= 50)
-    {
-        console.log("Welcome to ZU Peshawar")
-    }
+var color = prompt("Enter the color: ")
 
-if(brt_fair < 50)
-    {
-        console.log("Please, Recharge your Card!")
-    }
+if (color === "Red") {
+    console.log("Stop!")
+} else if (color === "Yellow") {
+    console.log("Ready to Drive!")
+} else if(color === "Green") {
+    console.log("Go!")
+} else {
+    console.log("Invalid Color")
+}
