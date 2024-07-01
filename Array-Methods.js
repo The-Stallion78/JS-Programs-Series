@@ -64,7 +64,5 @@ console.log("--------------------------\n")
 console.log("After concat() Three arrays: ", animals.concat(animals1, animals));
 console.log("--------------------------\n")
 
-
-
 // 10. 
 
