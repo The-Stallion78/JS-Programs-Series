@@ -1,1 +1,1 @@
-  const { name, age, city } = person;
+console.log(`Info ${check} : ${Info[check]}`)

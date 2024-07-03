@@ -64,6 +64,8 @@ console.log("Math.log2() : ", Math.log2(10))
 console.log("Math.log10() : ", Math.log10(100))
 
 console.log("Random() returns random values between 0-1 when used with floor(): ", Math.floor(Math.random() * 10))
+
+console.log("Boolean function(): ", Boolean(9 < 11))
 console.log("--------------------------\n")
 
 
