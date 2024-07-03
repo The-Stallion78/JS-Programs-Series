@@ -1,0 +1,9 @@
+.Main-Heading {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: lightslategrey;
+    border: 2px solid black;
+    width: 200px;
+    height: 200px;
+    
+}

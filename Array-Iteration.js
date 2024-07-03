@@ -1,4 +1,6 @@
                             // ARRAY ITERATION METHOD
+
+
 let animals = ["cat", "Dog", "Lion", "Tiger"];
 
 // Array forEach - calls a function (a callback function) once for each array element.
@@ -8,63 +10,44 @@ animals.forEach ((animal, Index) => {
 })
 console.log("------------------------\n")
 
-// Array map()
-const numbers = [45, 4, 9, 16, 25];
-let txt = "";
-
-// Define the callback function
-function myFunction(value, index, array) {
-  txt += value + "<br>"; // Concatenate the value and a line break to txt
+// Array map() - creates a new array by performing a function on each array element.
+var anotherArray = animals.map(myFunction)
+console.log('older array: ', animals)
+function myFunction(value, Index) {
+  return `Index ${Index} : ${value}`
 }
+console.log(`New array  is: `, anotherArray)
+console.log("------------------------\n")
 
-// Use forEach to iterate over the array
-numbers.forEach(myFunction);
+// Array filter() - creates a new array with array elements that pass a test.
+var Num = [44, 2, 11, 445, 99, 0, 65]
+var filteredArray = Num.filter(myFunction2);
 
-console.log(txt); // Output the result
-
-
-
-// Array flatMap()
-
-
-
-// Array filter()
-
+function myFunction2 (value, IN) {
+  return value > 15;
+}
+console.log(`Filtered array: ${filteredArray}`)
+console.log("------------------------\n")
 
 
 // Array reduce()
+const numbers = [1, 2, 3, 4, 5];
 
+const sum = numbers.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue;
+}, 0);
 
+console.log("Reduced value", sum); // Output: 15
+console.log("------------------------\n")
 
-// Array reduceRight()
+// Array reduce()
+var Num = [44, 2, 11, 445, 99, 0, 65]
+var everyArray = Num.every(myFunction3);
 
-
-
-// Array every()
-
-
-
-// Array some()
-
-
-
-// Array from()
-
-
-
-// Array keys()
-
-
-
-// Array entries()
-
-
-
-// Array with()
-
-
-
-// Array Spread (...)
-
+function myFunction3 (value, IN) {
+  return value > 15;
+}
+console.log(`Every array: ${everyArray}`)
+console.log("------------------------\n")
 
 
