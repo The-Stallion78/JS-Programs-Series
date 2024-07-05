@@ -4,37 +4,22 @@
 
 <h2>JavaScript try catch</h2>
 
-<p>Please input a number between 5 and 10:</p>
+<button onclick="Result()">Click Here</button>
+<p id="demo"></p>
 
-<input id="demo" type="text">
-<button type="button" onclick="myFunction()">Test Input</button>
-
-<p id="p1"></p>
 
 <script>
+  function Result() {
+    var arr = [4, 6, 7, 9]
+    var arr2 = arr.map(test)
 
-    function myFunction() {
-      const message = document.getElementById("p1");
-      message.innerHTML = "";
-      let x = document.getElementById("demo").value;
-
-      try { 
-        if(x.trim() == "")  throw "is empty";
-        if(isNaN(x)) throw "is not a number";
-        x = Number(x);
-        if(x > 10)   throw "is too high";
-        if(x < 5)  throw "is too low";
-      }
-      catch(err) {
-        message.innerHTML = "Input " + err;
-      }
-      finally {
-        document.getElementById("demo").value = "";
-      }
-      
+    function test(values) {
+      return values * 10
     }
+    document.getElementById("demo").innerHTML = "New String: "+ arr2;
 
-    </script>
+  }
+</script>
 
 </body>
 </html>
