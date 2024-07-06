@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+
 <body>
+<center>
+  <div>Student Information</div>
+</center>
+<h3>First Student's Data</h3>
+<button id="Student1data"><b>First Student</b></button>
+<p id="student1"></p>
 
-<h2>JavaScript try catch</h2>
+<h3>Second Student's Data</h3>
+<button id="Student2data"><b>Second Student</b></button>
+<p id="student2"></p>
 
-<button onclick="Result()">Click Here</button>
-<p id="demo"></p>
 
-
-<script>
-  function Result() {
-    var arr = [4, 6, 7, 9]
-    var arr2 = arr.map(test)
-
-    function test(values) {
-      return values * 10
-    }
-    document.getElementById("demo").innerHTML = "New String: "+ arr2;
-
-  }
-</script>
-
+<script src="std-Info.js"></script>
 </body>
 </html>
 
