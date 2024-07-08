@@ -22,7 +22,7 @@
         Name : function () {
             return "His name is: " + this.firstname + " " + this.lastname + "." + " This boy is gonna be a highly dignified CSP-PAS officer in civil service of Pakistan. Insha Allah! \n" + " ==========================\n"
         }
-    }
+    };
     
     Info.Income = "$178";   // adding property 
     delete Info.Income // deleting property 

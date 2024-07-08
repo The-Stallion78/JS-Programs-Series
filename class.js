@@ -24,8 +24,10 @@ class Student_Info {
 
 // Creating class object
 console.log('\n\n')
+
 let std1 = new Student_Info("Mubeen Rani", 24, "Female", "IT", 2024);
 std1.courseDetail("Computer Programming", "4 Months", "RS: 7000/-", "July 2024", "4CH");
+
 console.log("Student name: "+ std1.name);
 console.log("Age: " + std1.age);
 console.log("Gender: " + std1.gender);
