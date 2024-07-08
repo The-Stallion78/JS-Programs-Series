@@ -1,41 +1,28 @@
 <!DOCTYPE html>
 <html>
 <body>
-    <title>document</title>
-<h1>JavaScript Objects</h1>
-<h2>The Object.groupBy() Method</h2>
+<h1>JavaScript Class Method</h1>
+<p>Pass a parameter into the "age()" method.</p>
 
 <p id="demo"></p>
 
 <script>
-// Create an Array
-const fruits = [
-  {name:"apples", quantity:300},
-  {name:"bananas", quantity:500},
-  {name:"oranges", quantity:200},
-  {name:"kiwi", quantity:150}
-];
-
-// Callback function to select low volumes 
-function myCallback({ quantity }) {
-  return quantity > 200 ? "ok" : "low";
+class Car {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+  }
+  age(x) {
+    return x = this.year ;
+  }
 }
 
-// Group by ok and low
-const result = Object.groupBy(fruits, myCallback);
+const date = new Date();
+let year = date.getFullYear();
 
-// Display Results
-let text ="These fruits are Ok: <br>";
-for (let [x,y] of result.ok.entries()) {
-  text += y.name + " " + y.quantity + "<br>";
-}
-
-text += "<br>These fruits are low: <br>";
-for (let [x,y] of result.low.entries()) {
-  text += y.name + " " + y.quantity + "<br>";
-}
-
-document.getElementById("demo").innerHTML = text;
+const myCar = new Car("Ford", 2014);
+document.getElementById("demo").innerHTML=
+"My car is " + myCar.age(year) + " model.";
 </script>
 
 </body>
