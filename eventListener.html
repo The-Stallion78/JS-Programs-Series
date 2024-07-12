@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Event Listener</title>
+    <style>
+        #div1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border: 2px solid black;
+            display: none;
+        }
+        
+        #div2 {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(59, 243, 31);
+            border: 2px solid black;
+            display: none;
+        }
+
+        #divpart{
+            width: 300px;
+            height: 200px;
+            background-color: rgb(223, 99, 99);
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>JS addEventListener()  Method</h2>
+    <button type="button" id="myButton">Click Me</button>
+    <button type="button" id="myButton2">MouseOver Me</button>
+    <button type="button" id="myButton3" onclick="removeHandler()">MouseOut Me</button>
+    <div id="div1">Content Changed Successfully on MouseOver Method.</div>
+
+    <p id="p1">This is first paragraph</p>
+    <p id="p2"></p>
+
+    <div id="divpart">
+        <p>Lorem ipsum dolor sit amet </p>
+        <h3>Lorem ipsum</h3>
+    </div>
+
+    <script>
+
+
+        // document.getElementById("myButton2").addEventListener("mouseover", function() {
+        //     document.getElementById("div1").style.display = "block";
+        // });
+
+        // document.getElementById("myButton2").addEventListener("mouseout", function() {
+        //     document.getElementById("div1").style.display = "none";
+        // });
+
+        // document.getElementById("myButton3").addEventListener("mouseover", function() {
+        //     document.getElementById("div2").style.display = "block";
+        // });
+
+        // document.getElementById("myButton3").addEventListener("mouseout", function() {
+        //     document.getElementById("div2").style.display = "none";
+        // });
+        
+        // function removeHandler() {
+        //     const myButton3 = document.getElementById("myButton3");
+        //     const mouseoverHandler = function() {
+        //         document.getElementById("div2").style.display = "block";
+        //     };
+        //     myButton3.removeEventListener("mouseover", mouseoverHandler);
+        //     alert("Mouseover handler for myButton3 removed");
+        // }
+        // document.getElementById("myButton3").addEventListener("click", removeHandler);
+
+        // document.getElementById("p2").innerHTML = document.getElementById
+        // ("p1").innerHTML
+
+        var heading = document.createElement("h2");
+         var data = document.createTextNode("Lorem ispsem this is dummy text")
+         heading.appendChild(data);
+        document.getElementById("divpart").appendChild(heading)
+        var target =  document.getElementById("divpart");
+        target.insertBefore(heading, target.childNodes[0])
+
+        var target2 = document.getElementById("divpart");
+        target2.insertBefore(heading, target2.childNodes[1])
+
+
+    </script>
+</body>
+</html>

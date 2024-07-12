@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM Example</title>
+</head>
+<body>
+    <h1>Browser Object Model Example</h1>
+    <button onclick="showBrowserInfo()">Show Browser Info</button>
+    <button onclick="redirect()">Redirect</button>
+    <button onclick="newWindow()">Open new Window</button>
+    <button onclick="closeWindow()">Close this Window</button>
+    <button onclick="locateWindow()">See Location</button>
+    <button type="button" value="Forward" onclick="goAhead()">Forward</button>
+    <button type="button" value="Back" onclick="goBack()">Back</button>
+    <button onclick="checkCookies()">Cookies</button>
+    <button onclick="setTimeout(timeFunc(), 3000)">Check Delay</button>
+    <p id="timeInterval"></p>
+    <button onclick="stopTime()">Stop Time</button>
+
+
+    <script>
+        function showBrowserInfo() {
+            alert("User Agent: " + navigator.userAgent + "\n" +
+                  "Screen Width: " + screen.width + "\n" +
+                  "Screen Height: " + screen.height + "\n" +
+                  "Current URL: " + location.href + "\n" +
+                  "Available Screen Width: " + screen.availWidth + "\n" +
+                  "Available Screen Height: " + screen.availHeight + "\n" +
+                  "Screen Color Depth: " + screen.colorDepth);
+        }
+
+        function redirect() {
+            location.href = "https://www.example.com";
+        }
+
+        function newWindow() {
+            windowOpen = window.open("http://127.0.0.1:5500/BOM.html", "_blank", "width=500,height=300,top=100,left=100");
+            windowOpen.moveTo(200, 200)
+            windowOpen.resizeTo(600, 400)  // width = 600, height = 400
+        }
+
+        function closeWindow() {
+            windowOpen.close()
+        }
+
+        function locateWindow() {
+            alert("Current Location: " + location.href + "\n" +
+                "Current Hostname: " + window.location.hostname + "\n" +
+                "Current Pathname: " + window.location.pathname + "\n" +
+                "Current Location Protocol: " + window.location.protocol);
+                window.location.assign("https://www.w3schools.com")
+        }
+
+        function goAhead() {
+            window.history.forward(1);
+        }
+
+        function goBack() {
+            window.history.back()
+        }
+
+        function checkCookies() {
+            alert("cookiesEnabled is " + navigator.cookieEnabled  + "\n" + 
+            "Appname is " + navigator.appName + "\n" + 
+            "App version is " + navigator.appVersion + "\n" + 
+            "User agent is " + navigator.userAgent + "\n" +
+            "Platform navigator " + navigator.platform + "\n" +
+            "Browser language is " + navigator.language + "\n" +
+            "Browser status " + navigator.onLine)
+    }
+
+        /* TIMING EVENS
+        setTimeout(function, milliseconds)
+            Executes a function, after waiting a specified number of milliseconds.
+
+        setInterval(function, milliseconds)
+            Same as setTimeout(), but repeats the execution of the function continuously.
+        */
+
+        function timeFunc() {
+            alert("Hello World!")
+        }
+
+        let time = setInterval(myTime, 1000);
+        function myTime() {
+            let d = new Date();
+            document.getElementById("timeInterval").innerHTML ="Time: " + d.toLocaleTimeString()
+        }
+
+        function stopTime() {
+            clearInterval(time)
+        }
+
+        document.cookie = "Khizar Hayat Khan"
+        document.cookie = "Khizar Hayat Khan; expires=Thu, 18 Dec 2013"
+    </script>
+</body>
+</html>

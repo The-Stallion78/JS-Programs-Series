@@ -1,28 +1,87 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>JavaScript Class Method</h1>
-<p>Pass a parameter into the "age()" method.</p>
+  <head>
+    <style>
+      #container {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        background-color: yellow;
+      }
+      
+      #animate {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: red;
+      }
 
-<p id="demo"></p>
+      #mouseOverFunc{
+        background-color:#41e52b;
+        width:120px;
+        height:20px;
+        padding:40px;
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+
+<body>
+
+<h1 id = "Heading1">JavaScript DOM method</h1>
+
+<button type="button" onclick="myMove()">Animation Button</button><br><br>
+
+<div id="container">
+  <div id="animate"></div>
+</div><br><br>
+
+<button type="button" id="date">Displaying Date</button><br><br>
+
+<b>Enter Your Name: </b><input id="myName" type="text" oninput="UpperCase()"><br><br>
+
+<div id="mouseOverFunc" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" >Mouse over Me.</div>
 
 <script>
-class Car {
-  constructor(name, year) {
-    this.name = name;
-    this.year = year;
-  }
-  age(x) {
-    return x = this.year ;
-  }
+
+
+function mouseOver (mouseOverFunc) {
+  document.getElementById("mouseOverFunc").innerHTML = "ThankYou My lovely Boy."
 }
 
-const date = new Date();
-let year = date.getFullYear();
+function mouseOut (mouseOverFunc) {
+  document.getElementById("mouseOverFunc").innerHTML = "Mouse Over Me."
+}
 
-const myCar = new Car("Ford", 2014);
-document.getElementById("demo").innerHTML=
-"My car is " + myCar.age(year) + " model.";
+function UpperCase () {
+  x = document.getElementById("myName");
+  x.value = x.value.toUpperCase()
+}
+
+function myMove() {
+  let id = null;
+  const elem = document.getElementById("animate");
+  let pos = 0;
+  clearInterval(id);
+  id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++;
+      elem.style.top = pos + 'px';
+      elem.style.left = pos + 'px';
+    }
+  }
+}
+// HTML DOM EVENTS
+
+document.getElementById("date").onclick = displayDate
+function displayDate (date) {
+  document.getElementById("date").innerHTML = 'Current Date: ' + Date()
+}
+
+
 </script>
 
 </body>
