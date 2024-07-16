@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History API</title>
+</head>
+<body>
+    <h1>HISTORY API</h1>
+
+    <p>On clicking the button window will the previuos page.</p>
+    <button onclick="myFunction()">Go back</button>
+    <button onclick="myFunction2()">Forward</button>
+    <button onclick="myFunction3()">Go On</button>
+
+    <h1>STORAGE API</h1>
+    <p id="demo"></p>
+
+
+    <script>
+        let button = document.getElementById("btn");
+        function myFunction () {
+            window.history.back(); // Loads back URL
+            }
+        function myFunction2 () {
+            window.history.forward(); // Loads next URL
+        }
+        function myFunction3 () {
+            window.history.go(-3); // Loads the URL as per no given
+        }
+    
+        // STORAGE API
+        let store = document.getElementById("demo")
+        store.innerHTML = localStorage.getItem("name")
+        localStorage.setItem ("name","Khizar Hayat Khan")
+
+        
+    </script>
+</body>
+</html>
