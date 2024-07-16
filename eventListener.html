@@ -31,22 +31,59 @@
 </head>
 
 <body>
-    <h2>JS addEventListener()  Method</h2>
-    <button type="button" id="myButton">Click Me</button>
-    <button type="button" id="myButton2">MouseOver Me</button>
-    <button type="button" id="myButton3" onclick="removeHandler()">MouseOut Me</button>
-    <div id="div1">Content Changed Successfully on MouseOver Method.</div>
+    <h2>JS event Methods</h2>
+    <button id="btn1">Click Me!</button>
+    <button id="btn2">mode</button>
+    <button id="btn3">Click to Change</button>
+    <p id="p1">This is paragraph</p>
 
-    <p id="p1">This is first paragraph</p>
-    <p id="p2"></p>
-
-    <div id="divpart">
-        <p>Lorem ipsum dolor sit amet </p>
-        <h3>Lorem ipsum</h3>
+    <h2>JS addEventListener() Method</h2>
+    <button id="btn11">Show Sum</button>
+    <button id="btn22">Hide Text</button>
+    <button id="btn33">Big Text</button>
+    <p id="p11">Calculating Sum. Click button 1</p>
+    <p id="p22">This Line will disappear once you mouse-over on button 2</p>
+    <p id="p33">This Line text will enlarge once you click on button 3</p>
     </div>
 
     <script>
 
+    document.getElementById("btn1").onclick = () => {
+        let sum = (a, b) => {
+            document.write("Sum is: " + (a + b));
+        };
+        sum(4, 7);
+    };
+
+    // document.getElementById("btn2").onmouseover = function () {
+    //     Sum (10, 55);
+    //     this.onmouseout = null
+    // }
+
+    // function Sum (a, b) {
+    //     document.write("Sum is: " + (a + b));
+    // }
+    let modeColor = "dark";
+    let modeButton = document.getElementById("btn2");
+
+    modeButton.addEventListener("click", () => {
+        if (modeColor === "dark") {
+            modeColor = "light";
+            document.getElementsByTagName("body")[0].style.backgroundColor = "black";
+        } else {
+            modeColor = "dark";
+            document.getElementsByTagName("body")[0].style.backgroundColor = "white";
+        }
+        console.log(modeColor);
+    });
+
+
+    document.getElementById("btn3").onclick = (function () {
+        document.getElementById("p1").style.backgroundColor = "yellow";
+        document.getElementById("p1").style.fontSize = "25px";
+        document.getElementById("p1").innerHTML = "Paragraph Styling applied."
+    })
+  
 
         // document.getElementById("myButton2").addEventListener("mouseover", function() {
         //     document.getElementById("div1").style.display = "block";
@@ -77,17 +114,39 @@
         // document.getElementById("p2").innerHTML = document.getElementById
         // ("p1").innerHTML
 
-        var heading = document.createElement("h2");
-         var data = document.createTextNode("Lorem ispsem this is dummy text")
-         heading.appendChild(data);
-        document.getElementById("divpart").appendChild(heading)
-        var target =  document.getElementById("divpart");
-        target.insertBefore(heading, target.childNodes[0])
+        // var heading = document.createElement("h2");
+        //  var data = document.createTextNode("Lorem ispsem this is dummy text")
+        //  heading.appendChild(data);
+        // document.getElementById("divpart").appendChild(heading)
+        // var target =  document.getElementById("divpart");
+        // target.insertBefore(heading, target.childNodes[0])
 
-        var target2 = document.getElementById("divpart");
-        target2.insertBefore(heading, target2.childNodes[1])
+        // var target2 = document.getElementById("divpart");
+        // target2.insertBefore(heading, target2.childNodes[1])
+    document.getElementById("btn11").addEventListener("click", function () {
+        let a = 5, b = 59
+        let sum = a + b;
 
+        let p11 = document.getElementById("p11");
+        p11.style.display = "block"
+        p11.style.width = "300px";
+        p11.style.height = "200px";
+        p11.style.backgroundColor = "lightblue";
+        p11.style.fontSize = "25px";
+        p11.innerHTML = "Sum is: " + sum;
+        p11.style.justifyContent = "center";
+        p11.style.textAlign = "center"
+        p11.style.paddingTop = "100px"
+    })
 
+    document.getElementById("btn22").addEventListener("mouseover", function () {
+    document.getElementById("p22").style.display = "none";
+    });
+
+    document.getElementById("btn33").addEventListener("mouseup", function () {
+        document.getElementById("p33").style.fontSize = "40px";
+        document.getElementById("p33").style.backgroundColor = "lightgreen"
+    })
     </script>
 </body>
 </html>
